@@ -74,7 +74,9 @@ function authMiddleware(req, res, next) {
     return res.status(401).json({ error: 'Unauthorized' });
   }
 }
-
+app.get("/",(req,res)=>{
+  res.send("Server is running")
+})
 app.post('/api/auth/signup', async (req, res) => {
   try {
     console.log(req.body)
